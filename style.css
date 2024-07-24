@@ -63,12 +63,19 @@ a {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.article:hover {
+    background-color: rgba(102, 204, 255, 0.3); /* 设置悬浮时的浅蓝色背景和透明度 */
 }
 
 .article h3 {
     margin: 0 0 10px;
+    font-size: 20px;
 }
 
 .article p {
     margin: 0;
+    color: #39c5bb;
 }
