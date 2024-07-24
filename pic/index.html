@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机图片</title>
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: rgba(102, 204, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #208cff;
+        }
+
+        .pic-choice {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .button-r18{
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: rgba(57,197,187);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+        .button-r18:hover {
+            background-color: #ee0000;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- 感谢栗次元https://t.alcy.cc/ -->
+        <span class="pic-choice">栗次元图库</span>
+        <button onclick="changeImage('https://t.alcy.cc/pc/')">PC</button>
+        <button onclick="changeImage('https://t.alcy.cc/moez')">萌图</button>
+        <button onclick="changeImage('https://t.alcy.cc/ysz')">原神</button>
+        <button onclick="changeImage('https://t.alcy.cc/ycy')">二次元</button>
+        <button onclick="changeImage('https://t.alcy.cc/mp')">竖图</button>
+        <button onclick="changeImage('https://t.alcy.cc/moemp')">萌竖图</button>
+        <button onclick="changeImage('https://t.alcy.cc/ysmp')">原神竖图</button>
+
+    </br>
+        <span class="pic-choice">anosu涩图</span>
+        <button onclick="changeImage('https://image.anosu.top/pixiv/direct?r18=1&keyword=bluearchive')" class="button-r18">BA</button>
+        <button onclick="changeImage('https://image.anosu.top/pixiv/direct?r18=1&keyword=arknights')" class="button-r18">方舟</button>
+        <button onclick="changeImage('https://image.anosu.top/pixiv/direct?r18=1&keyword=genshinimpact')" class="button-r18">原神</button>
+
+        <!-- 感谢https://dev.iw233.cn/API/index.php -->
+        <!-- <span class="pic-choice">iw233</span>
+        <button onclick="changeImage('https://dev.iw233.cn/api.php?sort=random')">iw233</button> -->
+
+        <!-- 感谢https://api.lolicon.app/#/setu -->
+        <!-- <span class="pic-choice">lolicon</span>
+        <button id="loliconButton" onclick="toggleR18()">普通</button>
+        <input type="text" id="tagInput" placeholder="输入tag">
+        <button onclick="requestLolicon()">lolicon</button> -->
+
+    </div>
+    <img id="displayImage" alt="显示图片" src='https://t.alcy.cc/moez' />
+
+    <script>
+        // let isR18 = false;
+
+        // function toggleR18() {
+        //     const button = document.getElementById("loliconButton");
+        //     isR18 = !isR18;
+        //     if (isR18) {
+        //         button.classList.add("r18");
+        //         button.textContent = "R18";
+        //     } else {
+        //         button.classList.remove("r18");
+        //         button.textContent = "普通";
+        //     }
+        // }
+
+        // function requestLolicon() {
+        //     const tag = document.getElementById("tagInput").value;
+        //     let requestData = {
+        //         tag: [tag]
+        //     };
+        //     if (isR18) {
+        //         requestData.r18 = 1;
+        //     }
+        //     alert(`Request data: ${JSON.stringify(requestData)}`);
+        //     // let url = `https://api.lolicon.app/setu/v2?tag=${encodeURIComponent(tag)}`;
+        //     // if (isR18) {
+        //     //     url += "&r18=1";
+        //     // }
+        //     // alert(url);
+        //     // fetch(url)
+        //     fetch("https://api.lolicon.app/setu/v2", {
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json"
+        //         },
+        //         body: JSON.stringify(requestData)
+        //     })
+        //         .then(response => {
+        //             if (!response.ok) {
+        //                 throw new Error(`HTTP error! Status: ${response.status}`);
+        //             }
+        //             return response.json();
+        //         })
+        //         .then(data => {
+        //             alert(`Response data: ${JSON.stringify(data)}`);
+        //             if (data.data && data.data.length > 0) {
+        //                 const imageUrl = data.data[0].urls.original;
+        //                 changeImage(imageUrl);
+        //             } else {
+        //                 alert("未找到图片");
+        //             }
+        //         })
+        //         .catch(error => {
+        //             console.error("Error fetching image:", error);
+        //             alert("请求图片时出错", error);
+        //             alert(error);  // TypeError: Failed to fetch
+        //         });
+        // }
+
+        function changeImage(imageSrc) {
+            // 如果imageSrc字符串里含有alcy
+            if (imageSrc.includes("alcy")) {
+                document.getElementById("displayImage").src = imageSrc + '?' + Math.random();
+            }
+            else if (imageSrc.includes("anosu")) {
+                document.getElementById("displayImage").src = imageSrc + '&aaa=' + Math.random();
+            }
+            else {
+                document.getElementById("displayImage").src = imageSrc;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

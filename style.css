@@ -9,7 +9,13 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    transition: background-color 0.3s ease;
 }
+
+a:hover {
+    background-color: rgb(255, 255, 255);
+}
+
 
 .container {
     display: flex;
@@ -47,7 +53,7 @@ a {
 }
 
 .github-stats {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 
 .github-stats h3 {
@@ -56,6 +62,22 @@ a {
 
 .github-stats p {
     margin: 5px 0;
+}
+
+.github-stats a{
+    width: auto;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    background-color: rgba(102, 204, 255, 0.3);
+    transition: background-color 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.github-stats a:hover {
+    opacity: 0.8;
+    background-color: rgba(57,197,187, 0.6);
 }
 
 .article {
@@ -78,4 +100,20 @@ a {
 .article p {
     margin: 0;
     color: #39c5bb;
+}
+
+.random-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 5px 5px;
+    border-radius: 5px;
+    background-color: rgba(102, 204, 255, 0.3);
+    transition: background-color 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+.random-image:hover {
+    opacity: 0.8;
+    background-color: rgba(57,197,187, 0.6);
 }
